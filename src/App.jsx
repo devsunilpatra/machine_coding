@@ -1,9 +1,11 @@
-
+import Scroll from "./components/infiniteScroll/InfiniteScroll";
 
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+    return (
+        <div>
+            <Scroll />
+        </div>
+    );
+};
 
-export default App
+export default App;
