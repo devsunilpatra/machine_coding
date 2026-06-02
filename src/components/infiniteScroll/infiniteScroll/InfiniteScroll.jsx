@@ -46,8 +46,10 @@ export default function InfiniteScroll() {
                 if (entries[0].isIntersecting && hasMore) {
                     setPage((prev) => prev + 1);
                 }
-            });
+            },{threshold: 0.5});
 
+
+             console.log(node, "node")
             if (node) {
                 observer.current.observe(node);
             }
@@ -60,25 +62,12 @@ export default function InfiniteScroll() {
             <h2 className="pt-2 text-center uppercase">Infinite Scroll Posts</h2>
 
             {posts.map((post, index) => {
-                if (posts.length === index + 1) {
-                    return (
-                        <div
-                            key={post.id}
-                            ref={lastPostRef}
-                            style={{
-                                border: "1px solid #ccc",
-                                margin: "10px",
-                                padding: "10px",
-                            }}
-                        >
-                            {post.title}
-                        </div>
-                    );
-                }
+                const isLastPost = index === posts.length - 1;
 
                 return (
                     <div
                         key={post.id}
+                        ref={isLastPost ? lastPostRef : null}
                         className="m-2.5 border p-2.5"
                     >
                         {post.title}

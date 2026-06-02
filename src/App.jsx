@@ -2,12 +2,12 @@
 // import Search from "./components/debouncing/Search";
 // import  Search  from "./components/debouncing/debounce/Search";
 
-import InfiniteScroll from "./components/infiniteScroll/infiniteScroll/InfiniteScroll";
-
+// import InfiniteScroll from "./components/infiniteScroll/infiniteScroll/InfiniteScroll";
+import ModalContainer from "./components/modals/ModalContainer";
 const App = () => {
     return (
         <div>
-            <InfiniteScroll />
+            <ModalContainer />
         </div>
     );
 };
